@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  script(src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs")
+  script(src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna")
+  script(src='/js/qna.js')
+
+  div.d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+    h1(class="h2") NLP Question and Answer  
+
+  div(class="container")
+    div(class="row")
+      div(class="col-6")
+        div(class="mb-3")
+          label(for="text" class="form-label") Text
+          textarea(class="form-control" id="text" rows="10")
+      div(class="col-6")
+        div(class="mb-3")
+          label(for="text" class="form-label") Question
+          input(class="form-control" id="question")
+        div(class="mb-3")
+          button(type = "button",  class="btn btn-primary" onclick="answerQuestion()") Ask
+        div(class="mb-3")
+          label(for="text" class="form-label") Answer
+          textarea(class="form-control" id="answer" rows="4" readonly)  

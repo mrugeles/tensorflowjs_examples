@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  script(src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs")
+  script(src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd")
+  script(src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0")
+  script(src='/js/object_detection.js')
+
+  div.d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+    h1(class="h2") Object detection
+
+  div(class="container")
+    div(class="row")
+      div(class="col-6")
+        form(action = "/object_detection", method = "POST", enctype="multipart/form-data")
+          div(class="mb-3")
+            input(name = "file", type = "file", class="form-control")
+          div(class="mb-3")
+            button(type = "submit",  class="btn btn-primary") Upload file
+    div(id="image-canvas")
+  script. 
+    var image_path = '!{image_name}'

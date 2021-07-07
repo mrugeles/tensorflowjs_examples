@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  script(src="https://unpkg.com/ml5@latest/dist/ml5.min.js")
+  
+
+  div.d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+    h1(class="h2") Pose detection
+
+  div(class="container")
+    div(class="row")
+      div(class="col-6")
+        p(id='status') Loading model...
+        div(id="image-canvas")
+        script(src='/js/pose.js')
