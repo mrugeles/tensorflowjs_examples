@@ -21,3 +21,7 @@ nodemon app.js
 app started
 ```
 Load app at http://localhost:8080/
+
+# More information
+* https://www.tensorflow.org/js/
+* https://ml5js.org/
